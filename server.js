@@ -8,8 +8,10 @@ const cors = require('cors');
 
 app.use(bodyPasrser.json());
 app.use(cors());
-app.listen(9000, () => {
-    console.log('Express server started at port : 9000');
+
+var port = process.env.PORT || 9000
+app.listen(port, () => {
+    console.log('Express server started at port :' + port);
 });
 app.use('/user', userController);
 app.use('/question', questionController)
