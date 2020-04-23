@@ -5,13 +5,17 @@ const Question = require('../models/question.model');
 router.post('/questions', async (req,res) => {
     console.log("Question get router" + req.body.Uploadedby);  
     try{
-        const Questions = await Question.find({ Uploadedby : req.body.Uploadedby });
+        const Questions = await Question.find({ Uploadedby : req.body.Uploadedby }).sort({ "UploadedDate": -1});
         res.json(Questions);
         console.log(Questions);
     }catch(err){
         res.json("0");
     }
 });
+
+router.get('/', (req,res) =>{
+    res.json("Hello")
+})
 
 router.post('/',async (req,res) => {
     if(!req.body){

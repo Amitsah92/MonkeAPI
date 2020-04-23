@@ -6,7 +6,6 @@ const app = express();
 const bodyPasrser = require('body-parser');
 const cors = require('cors');
 
-
 app.use(bodyPasrser.json());
 app.use(cors());
 app.listen(9000, () => {
