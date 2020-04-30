@@ -2,6 +2,7 @@ require('./models/db');
 const express = require('express');
 const userController = require('./controllers/userController');
 const questionController = require('./controllers/questionController');
+const quizController = require('./controllers/quizController');
 const app = express();
 const bodyPasrser = require('body-parser');
 const cors = require('cors');
@@ -14,4 +15,5 @@ app.listen(port, () => {
     console.log('Express server started at port :' + port);
 });
 app.use('/user', userController);
-app.use('/question', questionController)
+app.use('/question', questionController);
+app.use('/quiz', quizController);
