@@ -4,7 +4,7 @@ const User = require('../models/user.model');
 
 
 //Router for unique email and username validation
-router.get('/', async (req,res) => {
+router.post('/validation', async (req,res) => {
     try{
         const users = await User.find({$or: [{userName : req.body.userName}, {email : req.body.email}]});
         res.json(users.length);
