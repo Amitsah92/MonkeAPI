@@ -6,7 +6,7 @@ var quizSchema = new mongoose.Schema({
         required: true
     },
     noOfQuestion:{
-        type: String,
+        type: Number,
         required: true
     },
     difficultyLevel:{
@@ -28,6 +28,10 @@ var quizSchema = new mongoose.Schema({
     createdDate:{
         type: Date,
         default: Date.now
+    },
+    quizDuration:{
+        type: String,
+        required: true
     },
     quizId:{
         type: String,
